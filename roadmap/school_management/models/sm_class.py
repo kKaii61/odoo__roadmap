@@ -11,6 +11,8 @@ class ClassManagement(models.Model):
     # fields.Many2many( comodel_name=comodel_name, relation=relation, column1=column1, column2=column2, string=string)
     student_ids = fields.Many2many('sm.student', 'sm_class_student_relation','class_id','student_id',string="Students")
 
+    # student_ids = fields.One2many('sm.student','class_id',string="Students")
+
     total_students = fields.Integer("Total Students", compute="_compute_student_data", store=True)
     avg_age = fields.Integer("Average Age", compute="_compute_student_data", store=True)
 

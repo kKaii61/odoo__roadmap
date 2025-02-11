@@ -20,8 +20,8 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="name"></field>
-                        <field name="age"></field>
+                        <field name="name">Student name</field>
+                        <field name="age">18</field>
                     </group>
                     <notebook>
                         <page name="Classes" string="Classes">
@@ -38,11 +38,21 @@
             </form>
         </field>
     </record>
-    <!-- <record id="res.groups" model="student1">
-        <field name="name">Kha Nuygen</field>
-        <field name="age">19</field>
-        <field name="class_ids">1A</field>
-    </record> -->
+    <!-- kanban view -->
+    <record id="sm_student_kanban_view" model="ir.ui.view">
+        <field name="name">sm.student.kanban.view</field>
+        <field name="model">sm.student</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <!-- action for student -->
     <record id="sm_student_action" model="ir.actions.act_window">
         <field name="name">Students</field>
