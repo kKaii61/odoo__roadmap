@@ -13,8 +13,10 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/menus.xml',
-        'views/view.xml'
+        'views/sm_school_views.xml',
+        'views/sm_class_views.xml',
+        'views/sm_student_views.xml',
+        'views/menus.xml'
     ],
     'assets':{
         'web.assets_backend':[
