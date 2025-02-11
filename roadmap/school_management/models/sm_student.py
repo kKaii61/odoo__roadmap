@@ -7,4 +7,4 @@ class StudentManagement(models.Model):
 
     name = fields.Char('Student Name')
     age = fields.Integer("Student Age")
-    classroom = fields.Char("Class Register")
+    class_ids = fields.Many2many('sm.class', string="Class", ondelete="cascade")

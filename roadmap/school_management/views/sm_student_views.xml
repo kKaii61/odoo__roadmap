@@ -8,7 +8,7 @@
             <tree>
                 <field name="name"></field>
                 <field name="age"></field>
-                <field name="classroom"></field>
+                <field name="class_ids"></field>
             </tree>
         </field>
     </record>
@@ -22,12 +22,27 @@
                     <group>
                         <field name="name"></field>
                         <field name="age"></field>
-                        <field name="classroom"></field>
                     </group>
+                    <notebook>
+                        <page name="Classes" string="Classes">
+                            <field name="class_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="class_type"/>
+                                    <field name="school_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
     </record>
+    <!-- <record id="res.groups" model="student1">
+        <field name="name">Kha Nuygen</field>
+        <field name="age">19</field>
+        <field name="class_ids">1A</field>
+    </record> -->
     <!-- action for student -->
     <record id="sm_student_action" model="ir.actions.act_window">
         <field name="name">Students</field>
