@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- tree view -->
+    <record id="sm_school_tree_view" model="ir.ui.view">
+        <field name="name">sm.school.tree.view</field>
+        <field name="model">sm.school</field>
+        <field name="arch" type='xml'>
+            <tree>
+                <field name="name"></field>
+            </tree>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="sm_school_form_view" model="ir.ui.view">
+        <field name="name">sm.school.form.view</field>
+        <field name="model">sm.school</field>
+        <field name="arch" type='xml'>
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- action -->
+    <record id="sm_school_action" model="ir.actions.act_window">
+        <field name="name">School</field>
+        <field name="res_model">sm.school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- menu -->
+    <menuitem 
+        id="sm_school_root_menu"
+        name="School Management"
+    />
+    <menuitem
+            id="sm_school_sub_root_menu"
+            name="Schools"
+            parent="sm_school_root_menu"
+    />
+    <menuitem
+            id="sm_school_sub_menu"
+            action="sm_school_action"
+            name="School List"
+            parent="sm_school_sub_root_menu"
+    />
+</odoo>
