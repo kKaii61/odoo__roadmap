@@ -13,7 +13,8 @@
     ],
     'data': [
         'security/ir.model.access.csv',
-        'views/menu.xml'
+        'views/menus.xml',
+        'views/view.xml'
     ],
     'assets':{
         'web.assets_backend':[
