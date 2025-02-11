@@ -7,3 +7,4 @@ class ClassManagement(models.Model):
 
     name = fields.Char("Class Name")
     class_type = fields.Char("Class Type")
+    school_id = fields.Many2one('sm.school', string="School", ondelete="cascade")

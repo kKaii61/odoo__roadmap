@@ -6,3 +6,4 @@ class SchoolManagement(models.Model):
     _description = 'School Management'
 
     name = fields.Char('School Name')
+    class_ids = fields.One2many('sm.class', 'school_id', string="Classes")
