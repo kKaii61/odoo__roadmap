@@ -10,6 +10,7 @@
             </tree>
         </field>
     </record>
+
     <!-- form view -->
     <record id="sm_school_form_view" model="ir.ui.view">
         <field name="name">sm.school.form.view</field>
@@ -24,49 +25,19 @@
             </form>
         </field>
     </record>
+
     <!-- action -->
+        <!-- action for school -->
     <record id="sm_school_action" model="ir.actions.act_window">
         <field name="name">School</field>
         <field name="res_model">sm.school</field>
         <field name="view_mode">tree,form</field>
     </record>
-
+        <!-- action for class -->
     <record id="sm_class_action" model="ir.actions.act_window">
         <field name="name">Classes</field>
         <field name="res_model">sm.class</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-
-    <!-- root menu -->
-    <menuitem 
-        id="sm_school_root_menu"
-        name="School Management"
-    />
-
-    <!-- Schools menu dropdown  -->
-    <menuitem
-            id="sm_schools_sub_root_menu"
-            name="Schools"
-            parent="sm_school_root_menu"
-    />
-    <menuitem
-            id="sm_schools_sub_menu"
-            action="sm_school_action"
-            name="School List"
-            parent="sm_schools_sub_root_menu"
-    />
-
-    <!-- Classes menu dropdown -->
-        <menuitem
-            id="sm_classes_sub_root_menu"
-            name="Classes"
-            parent="sm_school_root_menu"
-    />
-    <menuitem
-            id="sm_classes_sub_menu"
-            action="sm_class_action"
-            name="Class List"
-            parent="sm_classes_sub_root_menu"
-    />
+        <!-- action for student -->
 </odoo>
