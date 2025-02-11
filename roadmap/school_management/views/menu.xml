@@ -32,20 +32,35 @@
     </record>
 
 
-    <!-- menu -->
+    <!-- root menu -->
     <menuitem 
         id="sm_school_root_menu"
         name="School Management"
     />
+
+    <!-- Schools menu dropdown  -->
     <menuitem
-            id="sm_school_sub_root_menu"
+            id="sm_schools_sub_root_menu"
             name="Schools"
             parent="sm_school_root_menu"
     />
     <menuitem
-            id="sm_school_sub_menu"
+            id="sm_schools_sub_menu"
             action="sm_school_action"
             name="School List"
             parent="sm_school_sub_root_menu"
+    />
+
+    <!-- Classes menu dropdown -->
+        <menuitem
+            id="sm_classes_sub_root_menu"
+            name="Classes"
+            parent="sm_school_root_menu"
+    />
+    <menuitem
+            id="sm_classes_sub_menu"
+            action="sm_school_action"
+            name="Class List"
+            parent="sm_classes_sub_root_menu"
     />
 </odoo>
