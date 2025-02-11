@@ -25,7 +25,7 @@
             </form>
         </field>
     </record>
-
+    
     <!-- action -->
         <!-- action for school -->
     <record id="sm_school_action" model="ir.actions.act_window">
@@ -33,11 +33,4 @@
         <field name="res_model">sm.school</field>
         <field name="view_mode">tree,form</field>
     </record>
-        <!-- action for class -->
-    <record id="sm_class_action" model="ir.actions.act_window">
-        <field name="name">Classes</field>
-        <field name="res_model">sm.class</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-        <!-- action for student -->
 </odoo>
