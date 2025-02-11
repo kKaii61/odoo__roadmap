@@ -31,6 +31,12 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <record id="sm_class_action" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">sm.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- root menu -->
     <menuitem 
@@ -48,7 +54,7 @@
             id="sm_schools_sub_menu"
             action="sm_school_action"
             name="School List"
-            parent="sm_school_sub_root_menu"
+            parent="sm_schools_sub_root_menu"
     />
 
     <!-- Classes menu dropdown -->
@@ -59,7 +65,7 @@
     />
     <menuitem
             id="sm_classes_sub_menu"
-            action="sm_school_action"
+            action="sm_class_action"
             name="Class List"
             parent="sm_classes_sub_root_menu"
     />
