@@ -5,5 +5,5 @@ class SchoolManagement(models.Model):
     _name = 'sm.school'
     _description = 'School Management'
 
-    name = fields.Char('School Name')
+    name = fields.Char('School Name', required=True)
     class_ids = fields.One2many('sm.class', 'school_id', string="Classes")

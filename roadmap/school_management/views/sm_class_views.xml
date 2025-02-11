@@ -23,6 +23,10 @@
                         <field name="name"></field>
                         <field name="class_type"></field>
                     </group>
+                    <group name="Information" string="Information">
+                        <field name="total_students"></field>
+                        <field name="avg_age"></field>
+                    </group>
                     <notebook>
                         <page string="Schools">
                             <group name="school_id" string="School Name">
