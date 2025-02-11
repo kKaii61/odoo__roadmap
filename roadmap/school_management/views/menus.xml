@@ -31,4 +31,16 @@
             name="Class List"
             parent="sm_classes_sub_root_menu"
     />
+    <!-- Students menu dropdown -->
+        <menuitem
+            id="sm_students_sub_root_menu"
+            name="Students"
+            parent="sm_school_root_menu"
+    />
+    <menuitem
+            id="sm_students_sub_menu"
+            action="sm_student_action"
+            name="Student List"
+            parent="sm_students_sub_root_menu"
+    />
 </odoo>
