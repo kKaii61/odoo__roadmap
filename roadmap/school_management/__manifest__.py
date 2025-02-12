@@ -18,7 +18,7 @@
         'views/sm_student_views.xml',
         'views/menus.xml',
         'reports/report_student.xml',
-        'reports/report_student_card.xml',
+        'reports/report_student_templates.xml',
     ],
     'assets':{
         'web.assets_backend':[
