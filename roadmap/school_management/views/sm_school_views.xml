@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
+    <!-- action for school -->
+    <record id="sm_school_action" model="ir.actions.act_window">
+        <field name="name">School</field>
+        <field name="res_model">sm.school</field>
+        <field name="view_mode">tree,form</field>
+    </record>
     <!-- tree view -->
     <record id="sm_school_tree_view" model="ir.ui.view">
         <field name="name">sm.school.tree.view</field>
@@ -33,12 +39,5 @@
                 </sheet>
             </form>
         </field>
-    </record>
-    <!-- action -->
-    <!-- action for school -->
-    <record id="sm_school_action" model="ir.actions.act_window">
-        <field name="name">School</field>
-        <field name="res_model">sm.school</field>
-        <field name="view_mode">tree,form</field>
     </record>
 </odoo>

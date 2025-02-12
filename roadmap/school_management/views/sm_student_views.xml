@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- action for student -->
+    <record id="sm_student_action" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">sm.student</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new student by clicking on the New button!
+        </p>
+        </field>
+    </record>
     <!-- tree view -->
     <record id="sm_student_tree_view" model="ir.ui.view">
         <field name="name">sm.student.tree.view</field>
@@ -43,20 +54,42 @@
         <field name="name">sm.student.kanban.view</field>
         <field name="model">sm.student</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban class="o_kanban_view">
                 <templates>
                     <t t-name="kanban-box">
-                        
-                    </t>
-                </templates>
-            </kanban>
-        </field>
-    </record>
-
-    <!-- action for student -->
-    <record id="sm_student_action" model="ir.actions.act_window">
-        <field name="name">Students</field>
-        <field name="res_model">sm.student</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-</odoo>
+                        <div class="oe_kanban_global_click o_kanban_record">
+                            <div class="card shadow-sm border-0">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center justify-content-center p-2">
+                                        <img width="100" height="100" t-att-alt="'User Image'"
+                                            t-att-src="'/school_management/static/src/img/user.png'"
+                                            class="rounded-circle img-fluid"/>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body p-2">
+                                                <h5 class="card-title">
+                                                    <field name="name"/>
+                                                </h5>
+                                                <p class="card-text mb-1">
+                                                    <strong class="me-2">Age:</strong>
+                                                    <field name="age" readonly="1"/>
+                                                </p>
+                                                <p class="card-text mb-1">
+                                                    <strong class="me-2">Classes:</strong>
+                                                    <field name="class_ids"/>
+                                                </p>
+                                                <p class="card-text mb-1">
+                                                    <strong class="me-2">School:</strong>
+                                                    <field name="school_name" readonly="1"/>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    </odoo>
