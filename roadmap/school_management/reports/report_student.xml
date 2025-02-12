@@ -4,7 +4,7 @@
         <field name="name">Download PDF</field>
         <field name="model">sm.student</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">school_management.report_student_card</field>
+        <field name="report_name">school_management.report_students</field>
         <!-- <field name="binding_model_id" ref="model_student"/> -->
         <field name="binding_model_id" ref="school_management.model_sm_student"/>
         <field name="binding_type">report</field>
