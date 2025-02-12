@@ -2,3 +2,12 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 school_management.access_sm_school,sm.school,school_management.model_sm_school,base.group_user,1,1,1,1
 school_management.access_sm_class,sm.class,school_management.model_sm_class,base.group_user,1,1,1,1
 school_management.access_sm_student,sm.student,school_management.model_sm_student,base.group_user,1,1,1,1
+school_management.access_sm_student,sm.student,school_management.model_sm_student,school_management.student,0,0,0,0
+school_management.access_sm_class,sm.class,school_management.model_sm_class,school_management.student,1,0,0,0
+school_management.access_sm_school,sm.school,school_management.model_sm_school,school_management.student,1,0,0,0
+school_management.access_sm_student,sm.student,school_management.model_sm_student,school_management.student_manager,1,1,1,1
+school_management.access_sm_class,sm.class,school_management.model_sm_class,school_management.student_manager,1,1,0,0
+school_management.access_sm_school,sm.school,school_management.model_sm_school,school_management.student_manager,1,0,0,0
+school_management.access_sm_student,sm.student,school_management.model_sm_student,school_management.school_manager,1,1,1,1
+school_management.access_sm_class,sm.class,school_management.model_sm_class,school_management.school_manager,1,1,1,0
+school_management.access_sm_school,sm.school,school_management.model_sm_school,school_management.school_manager,1,1,0,0

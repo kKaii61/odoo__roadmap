@@ -13,6 +13,7 @@
     ],
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'views/sm_school_views.xml',
         'views/sm_class_views.xml',
         'views/sm_student_views.xml',
