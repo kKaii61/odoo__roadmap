@@ -5,6 +5,10 @@
         <field name="name">School</field>
         <field name="res_model">sm.school</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a new School by clicking on the New button!
+        </p>
+        </field>
     </record>
     <!-- tree view -->
     <record id="sm_school_tree_view" model="ir.ui.view">
@@ -13,6 +17,7 @@
         <field name="arch" type='xml'>
             <tree>
                 <field name="name"></field>
+                <field name="id"></field>
             </tree>
         </field>
     </record>
@@ -25,6 +30,7 @@
                 <sheet>
                     <group>
                         <field name="name"></field>
+                        <field name="id"></field>
                     </group>
                     <notebook>
                         <page string="Classes">

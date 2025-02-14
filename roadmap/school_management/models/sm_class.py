@@ -7,7 +7,9 @@ class ClassManagement(models.Model):
 
     name = fields.Char("Class Name", required=True)
     class_type = fields.Char("Class Type", required=True)
-    school_id = fields.Many2one('sm.school', string="School", ondelete="cascade", required=True)
+    # school_id take the school {name}
+    school_id = fields.Many2one('sm.school', string="School Name", ondelete="cascade", required=True)
+    
     # fields.Many2many( comodel_name=comodel_name, relation=relation, column1=column1, column2=column2, string=string)
     student_ids = fields.Many2many('sm.student', 'sm_class_student_relation','class_id','student_id',string="Students")
 
