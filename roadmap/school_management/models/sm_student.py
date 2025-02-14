@@ -11,9 +11,15 @@ class StudentManagement(models.Model):
                                  string="Class", ondelete="cascade", required=False)
     # Compute to get school name
     school_name = fields.Char(string="School Name", compute="_compute_school_name", store=True)
+    # Compute to get class list
+    class_list = fields.Char(string="Class list", compute="_compute_class_list", store=True)
     
-    @api.depends('class_ids.school_id')
+    @api.depends('class_ids.school_id', 'class_ids')
     def _compute_school_name(self):
         for student in self:
-            schools = student.class_ids.mapped('school_id.name')  # Lấy danh sách tên trường từ class_ids
-            student.school_name = ', '.join(schools) if schools else "No School"
+            schools = student.class_ids.mapped('school_id.name')  # Get school name from class_ids
+            student.school_name = ', '.join(schools) if schools else "No school engaged"
+    def _compute_class_list(self):
+        for record in self:
+            classes = record.class_ids
+            record.class_list = classes.mapped('name') 
