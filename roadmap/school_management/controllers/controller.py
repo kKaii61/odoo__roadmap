@@ -27,3 +27,7 @@ class createStudent(http.Controller):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
         res = request.env['sm.student'].sudo().create(vals)
+        if res:
+            return request.make_json_response({
+                "message": "Property has been created"
+            }, status=200)
