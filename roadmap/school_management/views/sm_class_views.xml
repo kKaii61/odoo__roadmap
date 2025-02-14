@@ -17,6 +17,7 @@
         <field name="model">sm.class</field>
         <field name="arch" type='xml'>
             <tree>
+                <field name="id"></field>
                 <field name="name"></field>
                 <field name="class_type"></field>
                 <field name="school_id"></field>

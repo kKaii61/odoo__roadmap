@@ -26,7 +26,12 @@ class createStudent(http.Controller):
     def createStudent(self):
         args = request.httprequest.data.decode()
         vals = json.loads(args)
-        res = request.env['sm.student'].sudo().create(vals)
+        res = request.env['sm.student'].sudo().create({
+            "name": vals["name"],
+            "age": vals["age"],
+            "class_ids": [(6, 0, vals["class_ids"])]
+        })
+        # res = request.env['sm.student'].sudo().create(vals)
         if res:
             return request.make_json_response({
                 "message": "Student has been created"
