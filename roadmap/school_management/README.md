@@ -1,7 +1,9 @@
 # Roadmap
 
-# What in this module?
-1. 
+# day 6
+1. School Admin: Full Access
+2. School User/Student: read/write/create Student
 
-# result
-1. 
+# day 7
+1.
+2.

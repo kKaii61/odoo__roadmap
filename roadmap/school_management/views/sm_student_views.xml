@@ -17,6 +17,7 @@
         <field name="model">sm.student</field>
         <field name="arch" type='xml'>
             <tree>
+                <field name="id"></field>
                 <field name="name"></field>
                 <field name="age"></field>
                 <field name="class_ids"></field>

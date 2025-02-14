@@ -3,6 +3,10 @@ school_management.access_sm_school_readonly,sm.school,school_management.model_sm
 school_management.access_sm_class_readonly,sm.class,school_management.model_sm_class,base.group_user,1,0,0,0
 school_management.access_sm_student_readonly,sm.student,school_management.model_sm_student,base.group_user,1,0,0,0
 
+school_management.access_sm_school_student,sm.school,school_management.model_sm_school,school_management.school_user_group,1,0,0,0
+school_management.access_sm_class_student,sm.class,school_management.model_sm_class,school_management.school_user_group,1,0,0,0
+school_management.access_sm_student_student,sm.student,school_management.model_sm_student,school_management.school_user_group,1,1,1,0
+
 school_management.access_sm_school_full,sm.school,school_management.model_sm_school,school_management.school_manager_group,1,1,1,1
 school_management.access_sm_class_full,sm.class,school_management.model_sm_class,school_management.school_manager_group,1,1,1,1
 school_management.access_sm_student_full,sm.student,school_management.model_sm_student,school_management.school_manager_group,1,1,1,1
