@@ -3,14 +3,12 @@
     <data noupdate="1">
         <!-- Email template for new students -->
         <record id="student_confirm_email" model="mail.template">
-            <field name="name">Welcome Student</field>
+            <field name="name">Student: Welcome email</field>
             <field name="model_id" ref="school_management.model_sm_student"/>
-            <field name="subject">Welcome,
-                <t t-out="object.name"/>
-            </field>
-            <field name="email_from" eval="object.company_id.email_formatted"/>
-            <field name="email_to" eval="object.email"/>
-            <field name="description">Sent to students with their information</field>
+            <field name="subject">Welcome! |{{ object.create_uid.name }} from {{ object.company_id.name }} </field>
+            <field name="email_from">{{  (user.email_formatted) }}</field>
+            <field name="email_to">{{ object.email }}</field>
+            <field name="description">Sent to new student after created</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p>Hello

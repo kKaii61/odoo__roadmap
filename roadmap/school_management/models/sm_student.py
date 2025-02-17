@@ -15,8 +15,9 @@ class StudentManagement(models.Model):
     # Compute to get class list
     class_list = fields.Char(string="Class list", compute="_compute_class_list", store=True)
 
-    # create
-
+    # ====================== MODEL =========================
+    #
+    #
     @api.model
     def create(self, vals):
         # Gọi phương thức gốc để tạo sinh viên
@@ -26,7 +27,13 @@ class StudentManagement(models.Model):
         if student.email:
             student.auto_send_email()
         return student
+    #
+    #
+    # ============================================================================
 
+    # ====================== METHODS =========================
+    #
+    #
     def btn_email_send(self):
         print(f"=========\nsend to {self.email} by button\n===========\n" if self.email else "\n===========\nNo email provided\n===============\n")
         mail_template = self.env.ref('school_management.student_confirm_email', raise_if_not_found=False)
@@ -34,15 +41,20 @@ class StudentManagement(models.Model):
             mail_template.sudo().send_mail(self.id, force_send=True)
         else:
             raise UserError("Template email not found!")
-        
+
     def auto_send_email(self):
         mail_template = self.env.ref('school_management.student_confirm_email', raise_if_not_found=False)
         if mail_template:
             mail_template.sudo().send_mail(self.id, force_send=True)
         else:
             raise UserError("Template email not found!")
+    #
+    #
+    # ============================================================================
 
-    # api
+    # ====================== API =========================
+    #
+    #
     @api.depends('class_ids.school_id', 'class_ids')
     def _compute_school_name(self):
         for student in self:
@@ -52,3 +64,6 @@ class StudentManagement(models.Model):
         for record in self:
             classes = record.class_ids
             record.class_list = classes.mapped('name') if classes else "No class registered"
+    #
+    #
+    # ============================================================================
