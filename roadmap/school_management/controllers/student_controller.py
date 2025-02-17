@@ -3,7 +3,7 @@ from odoo import http
 from odoo.http import request
 
 class StudentAPI(http.Controller):
-    @http.route("/api/students", methods=["GET"], type='json', auth='none', csrf=False)
+    @http.route("/api/students", methods=["GET"], type='http', auth='none', csrf=False)
     def get_all_student(self):
         students = request.env['sm.student'].sudo().search([])
         students_data = [

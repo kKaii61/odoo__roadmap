@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <!-- Category -->
     <record id="school_category" model="ir.module.category">
         <field name="name">School Management</field>
     </record>
+    <!-- Groups -->
     <record id="school_manager_group" model="res.groups">
         <field name="name">School Manager/Adminstration</field>
         <field name="category_id" ref="school_management.school_category"/>
@@ -11,7 +13,7 @@
         <field name="name">Student/User</field>
         <field name="category_id" ref="school_management.school_category"/>
     </record>
-    
+    <!-- Record rules -->
     <record id="student_rule_own_records" model="ir.rule">
         <field name="name">Student: Own Records Only</field>
         <field name="model_id" ref="school_management.model_sm_student"/>

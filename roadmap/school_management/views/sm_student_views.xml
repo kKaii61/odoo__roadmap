@@ -19,6 +19,7 @@
             <tree>
                 <field name="id"></field>
                 <field name="name"></field>
+                <field name="email"></field>
                 <field name="age"></field>
                 <field name="class_ids"></field>
             </tree>
@@ -30,9 +31,13 @@
         <field name="model">sm.student</field>
         <field name="arch" type='xml'>
             <form>
+                <xpath expr="//header" position="inside" class="container d-flex pt-2 pb-2">
+                    <button string="Send email" name="btn_email_send" type="object" class="oe_highlight"/>
+                </xpath>
                 <sheet>
                     <group>
                         <field name="name">Student name</field>
+                        <field name="email">Email</field>
                         <field name="age">18</field>
                     </group>
                     <notebook>
@@ -65,32 +70,35 @@
                                         <img width="100" height="100" t-att-alt="'User Image'"
                                             t-att-src="'/school_management/static/src/img/user.png'"
                                             class="rounded-circle img-fluid"/>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body p-2">
-                                                <h5 class="card-title">
-                                                    <field name="name"/>
-                                                </h5>
-                                                <p class="card-text mb-1">
-                                                    <strong class="me-2">Age:</strong>
-                                                    <field name="age" readonly="1"/>
-                                                </p>
-                                                <p class="card-text mb-1">
-                                                    <strong class="me-2">Classes:</strong>
-                                                    <field name="class_ids"/>
-                                                </p>
-                                                <p class="card-text mb-1">
-                                                    <strong class="me-2">School:</strong>
-                                                    <field name="school_name" readonly="1"/>
-                                                </p>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-2">
+                                            <h5 class="card-title">
+                                                <field name="name"/>
+                                            </h5>
+                                            <p class="card-text mb-1">
+                                                <field name="email" readonly="1"></field>
+                                            </p>
+                                            <p class="card-text mb-1">
+                                                <strong class="me-2">Age:</strong>
+                                                <field name="age" readonly="1"/>
+                                            </p>
+                                            <p class="card-text mb-1">
+                                                <strong class="me-2">Classes:</strong>
+                                                <field name="class_ids"/>
+                                            </p>
+                                            <p class="card-text mb-1">
+                                                <strong class="me-2">School:</strong>
+                                                <field name="school_name" readonly="1"/>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </t>
-                    </templates>
-                </kanban>
-            </field>
-        </record>
-    </odoo>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

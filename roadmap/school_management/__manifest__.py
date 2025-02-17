@@ -16,6 +16,7 @@
         'security/ir.model.access.csv',
         'data/sm.school.csv',
         'data/sm.class.csv',
+        'data/mail_template_data.xml',
         'views/sm_school_views.xml',
         'views/sm_class_views.xml',
         'views/sm_student_views.xml',
