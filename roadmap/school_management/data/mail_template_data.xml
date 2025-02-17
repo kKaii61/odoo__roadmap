@@ -2,48 +2,53 @@
 <odoo>
     <data noupdate="1">
         <!-- Email template for new students -->
+        <!-- To create/add mail template, have to add "mail" in __manifest__/depends -->
         <record id="student_confirm_email" model="mail.template">
             <field name="name">Student: Welcome email</field>
             <field name="model_id" ref="school_management.model_sm_student"/>
-            <field name="subject">Welcome! |{{ object.create_uid.name }} from {{ object.company_id.name }} </field>
+            <field name="subject">Welcome! | {{ object.create_uid.name }} from ENMASYS </field>
             <field name="email_from">{{  (user.email_formatted) }}</field>
             <field name="email_to">{{ object.email }}</field>
             <field name="description">Sent to new student after created</field>
             <field name="body_html" type="html">
-                <div style="margin: 0px; padding: 0px;">
-                    <p>Hello
-                        <t t-out="object.name"/>,
-                    </p>
-                    <p>Welcome to our school! We are happy to have you with us.</p>
-                    <p>Best regards, School Management Team</p>
-                    <div style="width: 18rem;">
-                        <div>
-                            <h5>Your Information</h5>
-                            <p>Your name:
+                <div style="justify-content: center;background-color: #714B67; padding:0.6rem;padding-left: 35px;text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;width:40%">
+                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Hello,
+                        <t t-out="object.name"/>!
+                    </h3>
+                    <p style="color: #555;">Welcome to our school! We are happy to have you with us.</p>
+                    <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"></hr>
+                        <h4 style="color: #34495e;">Your Information</h4>
+                        <div style="padding: 10px; background: #f9f9f9; border-radius: 5px;">
+                            <p style="margin: 5px 0;">
+                                <strong>Your Name:</strong>
                                 <t t-out="object.name"/>
                             </p>
-                            <p>Your mail:
+                            <p style="margin: 5px 0;">
+                                <strong>Your Email:</strong>
                                 <t t-out="object.email"/>
                             </p>
-                            <p>Your age:
+                            <p style="margin: 5px 0;">
+                                <strong>Your Age:</strong>
                                 <t t-out="object.age"/>
                             </p>
                             <t t-if="object.school_name">
-                                <p>Your School:
+                                <p style="margin: 5px 0;">
+                                    <strong>Your School:</strong>
                                     <t t-out="object.school_name"/>
                                 </p>
                             </t>
                             <t t-if="object.class_list">
-                                <p>Your Classes:
+                                <p style="margin: 5px 0;">
+                                    <strong>Your Classes:</strong>
                                     <t t-out="object.class_list"/>
                                 </p>
                             </t>
                         </div>
+                        <p style="margin-top: 15px;">Best regards,</p>
+                        <p style="font-style: italic;">School Management Team</p>
                     </div>
-                </div>
-            </field>
-            <field name="lang" eval="object.lang"/>
-            <field name="auto_delete" eval="True"/>
-        </record>
-    </data>
-</odoo>
+                </field>
+                <field name="auto_delete" eval="True"/>
+            </record>
+        </data>
+    </odoo>

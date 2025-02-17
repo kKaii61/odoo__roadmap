@@ -21,6 +21,8 @@
                 <field name="name"></field>
                 <field name="email"></field>
                 <field name="age"></field>
+                <field name="join_date"></field>
+                <field name="graduated_date"></field>
                 <field name="class_ids"></field>
             </tree>
         </field>
@@ -31,14 +33,16 @@
         <field name="model">sm.student</field>
         <field name="arch" type='xml'>
             <form>
-                <xpath expr="//header" position="inside" class="container d-flex pt-2 pb-2">
-                    <button string="Send email" name="btn_email_send" type="object" class="oe_highlight"/>
+                <xpath expr="//button[@name='action_quotation_send']" position="after">
+                    <button name="btn_email_send" type="object" string="Send email" class="oe_highlight"/>
                 </xpath>
                 <sheet>
                     <group>
                         <field name="name">Student name</field>
-                        <field name="email">Email</field>
-                        <field name="age">18</field>
+                        <field name="email"></field>
+                        <field name="age"></field>
+                        <field name="join_date"></field>
+                        <field name="graduated_date"></field>
                     </group>
                     <notebook>
                         <page name="Classes" string="Classes">
@@ -76,8 +80,15 @@
                                             <h5 class="card-title">
                                                 <field name="name"/>
                                             </h5>
+                                            <h5 class="card-text">
+                                                <field style="color: green;" name="status"/>
+                                            </h5>
                                             <p class="card-text mb-1">
                                                 <field name="email" readonly="1"></field>
+                                            </p>
+                                            <p class="card-text mb-1">
+                                                <strong class="me-2">Graduated:</strong>
+                                                <field name="graduated_date" readonly="1"></field>
                                             </p>
                                             <p class="card-text mb-1">
                                                 <strong class="me-2">Age:</strong>
