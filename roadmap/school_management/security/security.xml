@@ -11,6 +11,7 @@
         <field name="name">Student/User</field>
         <field name="category_id" ref="school_management.school_category"/>
     </record>
+    
     <record id="student_rule_own_records" model="ir.rule">
         <field name="name">Student: Own Records Only</field>
         <field name="model_id" ref="school_management.model_sm_student"/>
@@ -21,6 +22,7 @@
         <field name="perm_create" eval="True"/>
         <field name="perm_unlink" eval="False"/>
     </record>
+
     <!-- <record id="school_manager_rule" model="ir.rule">
         <field name="name">SchoolManager: Full Access Rights</field>
         <field name="model_id" ref="model_sm_student"/>

@@ -4,6 +4,7 @@
     <menuitem
         id="sm_school_root_menu"
         name="School Management"
+        web_icon="school_management,static/description/icon.png"
     />
 
     <!-- Schools menu dropdown  -->
