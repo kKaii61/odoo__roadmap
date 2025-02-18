@@ -18,7 +18,7 @@
                     <p style="color: #FFF;">Welcome to our school! We are happy to have you with us.</p>
                     <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"></hr>
                         <h4 style="color: #fff;">Your Information</h4>
-                        <div style="padding: 10px; background: #f9f9f9; border-radius: 5px;">
+                        <div style="padding: 10px; background:rgb(42, 207, 89); border-radius: 5px;">
                             <p style="margin: 5px 0;">
                                 <strong>Your Name:</strong>
                                 <t t-out="object.name"/>
