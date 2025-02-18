@@ -11,13 +11,13 @@
             <field name="email_to">{{ object.email }}</field>
             <field name="description">Sent to new student after created</field>
             <field name="body_html" type="html">
-                <div style="justify-content: center;background-color: #714B67; padding:0.6rem;padding-left: 35px;text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;width:40%">
-                    <h3 style="color: #2c3e50; margin-bottom: 10px;">Hello,
+                <div style="justify-content: center;background-color:rgb(25, 2, 19); padding:0.6rem;padding-left: 35px;text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;width:40%">
+                    <h3 style="color: #fff; margin-bottom: 10px;">Hello,
                         <t t-out="object.name"/>!
                     </h3>
-                    <p style="color: #555;">Welcome to our school! We are happy to have you with us.</p>
+                    <p style="color: #FFF;">Welcome to our school! We are happy to have you with us.</p>
                     <hr style="border: 0; border-top: 1px solid #ccc; margin: 15px 0;"></hr>
-                        <h4 style="color: #34495e;">Your Information</h4>
+                        <h4 style="color: #fff;">Your Information</h4>
                         <div style="padding: 10px; background: #f9f9f9; border-radius: 5px;">
                             <p style="margin: 5px 0;">
                                 <strong>Your Name:</strong>
