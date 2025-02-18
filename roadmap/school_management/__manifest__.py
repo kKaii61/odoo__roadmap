@@ -13,6 +13,7 @@
         "views/sm_school_views.xml",
         "views/sm_class_views.xml",
         "views/sm_student_views.xml",
+        'views/partner_student_views.xml',
         "views/menus.xml",
         "security/security.xml",
         "security/ir.model.access.csv",

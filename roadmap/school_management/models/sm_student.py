@@ -12,6 +12,7 @@ class StudentManagement(models.Model):
     name = fields.Char("Student's Name", required=True)
     age = fields.Integer("Student's Age", required=True)
     email = fields.Char("Student's Email")
+    # partner_ids = fields.One2many('res.partner', 'email', string='partner')
 
     join_date = fields.Date(
         "Join Date",
@@ -157,6 +158,11 @@ class StudentManagement(models.Model):
             ]:  # Not change if 'dropped' or 'suspended'
                 student.status = "studying"
 
+    # @api.onchange('partner_ids')
+    # def _onchange_student_id(self):
+    #     """Update the email when a student is linked to a partner."""
+    #     if self.student_id:
+    #         self.email = self.partner_ids.email
     #
     #
     # ============================================================================
