@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <!-- Email template for new students -->
         <!-- To create/add mail template, have to add "mail" in __manifest__/depends -->
         <record id="student_confirm_email" model="mail.template">
