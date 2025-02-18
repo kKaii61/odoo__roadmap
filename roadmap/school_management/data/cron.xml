@@ -5,7 +5,8 @@
         <field name="model_id" ref="school_management.model_sm_student"/>
         <field name="state">code</field>
         <field name="code">model.update_student_status()</field>
-        <field name="interval_type">minutes</field>
+        <!-- <field name="interval_type">minutes</field> uncomment to test cron -->
+        <field name="interval_type">days</field>
         <field name="interval_number">1</field>
         <field name="numbercall">-1</field>
         <field name="active" eval="True"/>
